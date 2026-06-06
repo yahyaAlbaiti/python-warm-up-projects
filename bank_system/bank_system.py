@@ -32,18 +32,18 @@ def deposit(balance, transactions):
 def withdraw(balance, transactions):
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M")
     try:
-        amount = float(input("\nenter how much you will draw: "))
+        amount = float(input("\nEnter how much you want to withdraw: "))
     except ValueError:
         print("Please enter a valid number.")
         return balance
 
     if amount > balance:
-        print("can't draw more than your balance")
+        print("Can't withdraw more than your balance.")
     elif amount <= 0:
-        print("you can't draw less than 0!")
+        print("You can't withdraw less than 0!")
     else:
         balance -= amount
-        print("\ndraw successful!")
+        print("\nWithdrawal successful!")
         print(f"---- your new balance is ${balance:.2f} ----")
 
         transactions.append({
